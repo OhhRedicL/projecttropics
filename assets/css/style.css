@@ -2015,3 +2015,4 @@ strong { color: var(--text); }
   .btn-status { display: none; }
   .nav-status-item { display: block; margin-top: 8px; border-top: 1px solid var(--line); padding-top: 8px; }
 }
+.dept-entry.closed { color: #ff9aa6; background: rgba(255, 90, 110, .1); border-color: rgba(255, 90, 110, .45); }

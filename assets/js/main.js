@@ -147,6 +147,13 @@
         if (label) label.textContent = "Applications Closed";
       }
     });
+    root.querySelectorAll("[data-entry]").forEach(function (el) {
+      var key = el.getAttribute("data-entry");
+      if (CFG.applicationsOpen && CFG.applicationsOpen[key] === false) {
+        el.classList.add("closed");
+        el.innerHTML = (el.classList.contains("dept-entry") ? ICONS.lock : "") + "Applications closed";
+      }
+    });
     root.querySelectorAll("[data-status]").forEach(function (el) {
       var key = el.getAttribute("data-status");
       var open = !CFG.applicationsOpen || CFG.applicationsOpen[key] !== false;

@@ -37,7 +37,7 @@ window.PT_CONFIG = {
     chp: true,
     comms: true,
     civ: true,
-    dot: true,
+    dot: false,
     staff: false
   }
 };
