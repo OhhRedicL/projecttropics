@@ -2016,3 +2016,15 @@ strong { color: var(--text); }
   .nav-status-item { display: block; margin-top: 8px; border-top: 1px solid var(--line); padding-top: 8px; }
 }
 .dept-entry.closed { color: #ff9aa6; background: rgba(255, 90, 110, .1); border-color: rgba(255, 90, 110, .45); }
+
+/* Inline chat command, e.g. /report */
+code.cmd {
+  padding: 2px 8px;
+  border-radius: 6px;
+  background: rgba(0, 0, 0, .6);
+  border: 1px solid rgba(252, 189, 61, .5);
+  color: var(--gold);
+  font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+  font-size: .92em;
+  white-space: nowrap;
+}
