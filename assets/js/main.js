@@ -101,6 +101,7 @@
       '<li><a href="departments.html#lapd">LAPD</a></li>' +
       '<li><a href="departments.html#lasd">LASD</a></li>' +
       '<li><a href="departments.html#chp">CHP</a></li>' +
+      '<li><a href="departments.html#comms">LA Communications</a></li>' +
       '<li><a href="departments.html#civ">Civilian Operations</a></li>' +
       '<li><a href="departments.html#dot">DOT</a></li></ul></div>' +
       '<div><h4>Get Started</h4><ul>' +
@@ -152,7 +153,7 @@
   /* ---------------- Server status panel ---------------- */
   var hiringEl = document.querySelector("[data-hiring]");
   if (hiringEl && CFG.applicationsOpen) {
-    var depts = ["lapd", "lasd", "chp", "civ", "dot"];
+    var depts = ["lapd", "lasd", "chp", "comms", "civ", "dot"];
     hiringEl.textContent = depts.filter(function (k) { return CFG.applicationsOpen[k] !== false; }).length + " of " + depts.length;
   }
   var code = (CFG.cfxCode || "").trim();

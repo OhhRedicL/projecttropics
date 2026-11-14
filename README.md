@@ -8,7 +8,7 @@ No build step is needed: it is plain HTML, CSS and JavaScript and can be hosted 
 | Page | File |
 | --- | --- |
 | Home | `index.html` |
-| Departments (LAPD, LASD, CHP, Civilian Operations, DOT) | `departments.html` |
+| Departments (LAPD, LASD, CHP, LA Communications, Civilian Operations, DOT) | `departments.html` |
 | Applications (tabbed, one tab per department + staff) | `applications.html` |
 | Community Rules (searchable) | `rules.html` |
 | Resources (connect guide, documents, 10-codes, FAQ) | `resources.html` |

@@ -21,6 +21,7 @@ window.PT_CONFIG = {
     lapd: "#",
     lasd: "#",
     chp: "#",
+    comms: "#",
     civ: "#",
     dot: "#",
     staff: "#"
@@ -31,6 +32,7 @@ window.PT_CONFIG = {
     lapd: true,
     lasd: true,
     chp: true,
+    comms: true,
     civ: true,
     dot: true,
     staff: false
