@@ -292,30 +292,39 @@ strong { color: var(--text); }
   transition: transform .25s;
 }
 .btn-discord svg { width: 22px; height: 22px; flex-shrink: 0; }
-/* Light chasing around the button: two bright streaks over a dim base ring */
-.btn-discord::before {
-  content: "";
+/* Light chasing around the button: a spinning disc of light shows through a thin ring.
+   Uses a plain transform rotation so it moves in every browser. */
+.btn-discord .ring {
   position: absolute;
   inset: -5px;
+  z-index: -1;
   border-radius: inherit;
   padding: 3.5px;
-  background:
-    conic-gradient(from var(--angle, 0deg),
-      transparent 0deg 70deg,
-      rgba(222, 95, 185, .7) 130deg,
-      #fff 172deg,
-      transparent 180deg 250deg,
-      rgba(252, 189, 61, .75) 310deg,
-      #fff 352deg,
-      transparent 360deg),
-    linear-gradient(rgba(252, 189, 61, .28), rgba(222, 95, 185, .28));
+  overflow: hidden;
+  pointer-events: none;
+  background: linear-gradient(rgba(252, 189, 61, .3), rgba(222, 95, 185, .3));
   -webkit-mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0);
   -webkit-mask-composite: xor;
-  mask-composite: exclude;
-  filter: drop-shadow(0 0 3px rgba(255, 255, 255, .9)) drop-shadow(0 0 8px rgba(222, 95, 185, .9));
-  animation: ringSpin 1.8s linear infinite;
-  z-index: -1;
+  mask: linear-gradient(#000 0 0) content-box exclude, linear-gradient(#000 0 0);
 }
+.btn-discord .ring-light {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  width: 160%;
+  aspect-ratio: 1;
+  background: conic-gradient(
+    transparent 0deg 70deg,
+    rgba(222, 95, 185, .8) 130deg,
+    #fff 172deg,
+    transparent 180deg 250deg,
+    rgba(252, 189, 61, .85) 310deg,
+    #fff 352deg,
+    transparent 360deg);
+  transform: translate(-50%, -50%) rotate(0deg);
+  animation: ringSpin 1.8s linear infinite;
+}
+.btn-discord .ring { filter: drop-shadow(0 0 4px rgba(255, 255, 255, .8)); }
 /* Flashing halo */
 .btn-discord::after {
   content: "";
@@ -334,12 +343,7 @@ strong { color: var(--text); }
 .btn-discord.lg { padding: 16px 32px; font-size: 1.2rem; }
 .btn-discord.lg svg { width: 26px; height: 26px; }
 
-@property --angle {
-  syntax: "<angle>";
-  initial-value: 0deg;
-  inherits: false;
-}
-@keyframes ringSpin { to { --angle: 360deg; } }
+@keyframes ringSpin { to { transform: translate(-50%, -50%) rotate(360deg); } }
 @keyframes discordShift {
   0%, 100% { background-position: 0% 50%; }
   50% { background-position: 100% 50%; }

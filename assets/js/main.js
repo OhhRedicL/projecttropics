@@ -163,6 +163,16 @@
   }
   hydrate(document);
 
+  /* Spinning light ring on every Discord button */
+  document.querySelectorAll(".btn-discord").forEach(function (btn) {
+    if (btn.querySelector(".ring")) return;
+    var ring = document.createElement("span");
+    ring.className = "ring";
+    ring.setAttribute("aria-hidden", "true");
+    ring.innerHTML = '<span class="ring-light"></span>';
+    btn.insertBefore(ring, btn.firstChild);
+  });
+
   /* ---------------- Server status panel ---------------- */
   var hiringEl = document.querySelector("[data-hiring]");
   if (hiringEl && CFG.applicationsOpen) {
