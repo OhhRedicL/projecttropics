@@ -12,6 +12,10 @@ window.PT_CONFIG = {
   connectCommand: "connect cfx.re/join/xxxxxx",
   fivemJoinUrl: "https://cfx.re/join/xxxxxx",
 
+  // Just the code from your cfx.re/join link (e.g. "abc123").
+  // When set, the home page shows live server status and player count.
+  cfxCode: "",
+
   // Application form links (Google Forms, Discord threads, etc.)
   applications: {
     lapd: "#",

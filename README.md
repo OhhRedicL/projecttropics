@@ -21,11 +21,12 @@ The header (with the glowing Discord button) and footer are shared across every 
 1. **Links**: open `assets/js/config.js` and set:
    - `discordInvite`: your Discord invite (used by every Discord button)
    - `connectCommand` / `fivemJoinUrl`: your cfx.re join code
+   - `cfxCode`: just the code from your cfx.re link. When set, the home page shows live server status and player count
    - `applications`: links to each department's application form
    - `applicationsOpen`: set a department to `false` to mark it **Closed**
 2. **Gallery**: put screenshots in `assets/img/gallery/` and add `src` to entries in `assets/js/gallery-data.js`.
 3. **Resource documents**: in `resources.html`, replace the `href="#"` on the document cards with links to your Penal Code, SOPs, etc.
-4. **Content**: review the stats on the home page, the department divisions, requirements and rules, and edit them to match your community.
+4. **Content**: review the department divisions, requirements and rules, and edit them to match your community.
 
 ## Preview locally
 

@@ -149,6 +149,38 @@
   }
   hydrate(document);
 
+  /* ---------------- Server status panel ---------------- */
+  var hiringEl = document.querySelector("[data-hiring]");
+  if (hiringEl && CFG.applicationsOpen) {
+    var depts = ["lapd", "lasd", "chp", "civ", "dot"];
+    hiringEl.textContent = depts.filter(function (k) { return CFG.applicationsOpen[k] !== false; }).length + " of " + depts.length;
+  }
+  var code = (CFG.cfxCode || "").trim();
+  if (code && document.querySelector("[data-server-cell]") && window.fetch) {
+    var cells = document.querySelectorAll("[data-server-cell]");
+    var dot = document.querySelector("[data-server-dot]");
+    var stateEl = document.querySelector("[data-server-state]");
+    var playersEl = document.querySelector("[data-server-players]");
+    cells.forEach(function (c) { c.hidden = false; });
+    var ctrl = window.AbortController ? new AbortController() : null;
+    var timer = setTimeout(function () { if (ctrl) ctrl.abort(); }, 7000);
+    fetch("https://servers-frontend.fivem.net/api/servers/single/" + encodeURIComponent(code), ctrl ? { signal: ctrl.signal } : {})
+      .then(function (r) { if (!r.ok) throw new Error(r.status); return r.json(); })
+      .then(function (json) {
+        clearTimeout(timer);
+        var d = json.Data || {};
+        var max = d.sv_maxclients || (d.vars && d.vars.sv_maxClients) || "";
+        dot.className = "status-dot online";
+        stateEl.textContent = "Online";
+        playersEl.textContent = (d.clients || 0) + (max ? " / " + max : "");
+      })
+      .catch(function () {
+        clearTimeout(timer);
+        // Status could not be read (offline, or the lookup was blocked): show nothing rather than a guess.
+        cells.forEach(function (c) { c.hidden = true; });
+      });
+  }
+
   /* ---------------- Header behaviour ---------------- */
   var toggle = document.querySelector(".nav-toggle");
   if (toggle) {
@@ -353,7 +385,7 @@
     document.querySelectorAll("[data-filter]").forEach(function (b) {
       b.addEventListener("click", function () {
         var f = b.getAttribute("data-filter");
-        document.querySelectorAll("[data-filter]").forEach(function (x) { x.setAttribute("aria-selected", x === b); });
+        document.querySelectorAll("[data-filter]").forEach(function (x) { x.setAttribute("aria-pressed", x === b); });
         grid.querySelectorAll(".gallery-item").forEach(function (g) {
           g.classList.toggle("hide", f !== "all" && g.getAttribute("data-cat") !== f);
         });
@@ -401,6 +433,12 @@
     document.addEventListener("keydown", function (e) {
       if (!lb.classList.contains("open")) return;
       if (e.key === "Escape") close();
+      if (e.key === "Tab") {
+        var f = lb.querySelectorAll("button");
+        var first = f[0], last = f[f.length - 1];
+        if (e.shiftKey && document.activeElement === first) { e.preventDefault(); last.focus(); }
+        else if (!e.shiftKey && document.activeElement === last) { e.preventDefault(); first.focus(); }
+      }
       if (e.key === "ArrowLeft") step(-1);
       if (e.key === "ArrowRight") step(1);
     });

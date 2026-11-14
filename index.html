@@ -13,7 +13,7 @@
   <link rel="apple-touch-icon" href="assets/img/apple-touch-icon.png">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Orbitron:wght@600;700;800;900&family=Rajdhani:wght@500;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:ital,wght@0,700;0,800;0,900;1,800&family=Chakra+Petch:wght@400;500;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="assets/css/style.css">
 </head>
 <body data-page="home">
@@ -40,26 +40,25 @@
       </div>
 
       <div class="container hero-content">
-        <div class="hero-logo reveal">
+        <div class="hero-logo hero-in" style="--d:0ms">
           <picture>
             <source srcset="assets/img/logo.webp" type="image/webp">
             <img src="assets/img/logo.png" alt="Project Tropics Roleplay" width="800" height="800">
           </picture>
         </div>
-        <div class="hero-badge reveal d1"><span class="live-dot"></span>Now Recruiting &middot; Los Angeles, CA</div>
-        <h1 class="reveal d1">
-          <span class="line">Your Story Starts in</span>
-          <span class="line grad-text">Los Angeles</span>
+        <h1 class="hero-title">
+          <span class="hero-kicker hero-in" style="--d:250ms">Your story starts in</span>
+          <span class="hero-city" style="--d:420ms"><span class="hero-city-text" data-text="Los Angeles">Los Angeles</span></span>
         </h1>
-        <p class="hero-sub reveal d2">A serious, story-driven FiveM roleplay community set in the heart of Los Angeles. Wear the badge, run the streets or build an empire. Every story starts here.</p>
-        <div class="rotator reveal d2" data-rotate="Protect &amp; Serve|Build Your Empire|Patrol the 405|Write Your Story|Own the Streets of LA">
-          <span class="rotator-text">Protect &amp; Serve</span><span class="cursor"></span>
+        <p class="hero-sub hero-in" style="--d:750ms">A serious, story-driven FiveM roleplay server. Wear the badge, run a business or build a crew, and play it all out across LA.</p>
+        <div class="rotator hero-in" style="--d:850ms" data-rotate="Protect &amp; serve|Patrol the 405|Build your empire|Own the streets of LA">
+          <span class="rotator-text">Protect &amp; serve</span><span class="cursor"></span>
         </div>
-        <div class="btn-row reveal d3">
-          <a class="btn-discord lg" data-link="discord" href="#" target="_blank" rel="noopener"><i data-icon="discord"></i><span>Join Our Discord</span></a>
-          <a class="btn btn-ghost" href="departments.html"><span>Explore Departments</span><i data-icon="arrow"></i></a>
+        <div class="btn-row hero-in" style="--d:950ms">
+          <a class="btn-discord lg" data-link="discord" href="#" target="_blank" rel="noopener"><i data-icon="discord"></i><span>Join our Discord</span></a>
+          <a class="btn btn-ghost" href="departments.html"><span>Explore departments</span></a>
         </div>
-        <div class="connect-strip reveal d4">
+        <div class="connect-strip hero-in" style="--d:1050ms">
           <code data-connect>connect cfx.re/join/xxxxxx</code>
           <button class="copy-btn" type="button" data-copy="connect"><i data-icon="copy"></i>Copy</button>
         </div>
@@ -84,7 +83,7 @@
             <div>
               <span class="tag">Announcement</span>
               <h4>Applications Are Open</h4>
-              <p>LAPD, LASD, CHP, Civilian Operations and DOT are all hiring. <a href="applications.html">Apply today &rarr;</a></p>
+              <p>LAPD, LASD, CHP, Civilian Operations and DOT are all hiring. <a href="applications.html">Apply today</a></p>
             </div>
           </div>
           <div class="highlight pink reveal d1">
@@ -92,7 +91,7 @@
             <div>
               <span class="tag">New Players</span>
               <h4>Read the Rules First</h4>
-              <p>Every member must read and follow our community rules before joining the city. <a href="rules.html">View rules &rarr;</a></p>
+              <p>Every member must read and follow our community rules before joining the city. <a href="rules.html">View rules</a></p>
             </div>
           </div>
           <div class="highlight reveal d2">
@@ -107,14 +106,27 @@
       </div>
     </section>
 
-    <!-- ================= STATS ================= -->
-    <section class="section-tight" style="padding-top:20px">
+    <!-- ================= SERVER STATUS ================= -->
+    <section class="section-tight" style="padding-top:12px">
       <div class="container">
-        <div class="stats">
-          <div class="card stat reveal"><div class="stat-num grad-text" data-count="5">5</div><div class="stat-label">Departments</div></div>
-          <div class="card stat reveal d1"><div class="stat-num grad-text">24/7</div><div class="stat-label">Server Online</div></div>
-          <div class="card stat reveal d2"><div class="stat-num grad-text" data-count="100" data-suffix="+">100+</div><div class="stat-label">Active Members</div></div>
-          <div class="card stat reveal d3"><div class="stat-num grad-text" data-count="1">1</div><div class="stat-label">City: Los Angeles</div></div>
+        <div class="status-panel reveal" aria-label="Server status">
+          <div class="status-cell" data-server-cell hidden>
+            <span class="status-label">Server</span>
+            <span class="status-value"><span class="status-dot" data-server-dot></span><span data-server-state>Checking</span></span>
+          </div>
+          <div class="status-cell" data-server-cell hidden>
+            <span class="status-label">Players in the city</span>
+            <span class="status-value" data-server-players>&ndash;</span>
+          </div>
+          <div class="status-cell">
+            <span class="status-label">Departments hiring</span>
+            <span class="status-value" data-hiring>5</span>
+          </div>
+          <div class="status-cell">
+            <span class="status-label">Setting</span>
+            <span class="status-value">Los Angeles, CA</span>
+          </div>
+          <a class="btn btn-primary status-cta" href="applications.html"><span>Apply now</span></a>
         </div>
       </div>
     </section>
@@ -123,8 +135,7 @@
     <section class="section">
       <div class="container">
         <div class="section-head reveal">
-          <div class="eyebrow">Why Project Tropics</div>
-          <h2>Roleplay That <span class="grad-text">Feels Real</span></h2>
+          <h2>Roleplay That Feels Real</h2>
           <p class="lead">We are not just another FiveM server. Project Tropics is built around quality roleplay, a respectful community and departments that actually feel like a career.</p>
         </div>
         <div class="grid grid-3">
@@ -166,8 +177,7 @@
     <section class="section" style="padding-top:0">
       <div class="container">
         <div class="section-head reveal">
-          <div class="eyebrow">Our Departments</div>
-          <h2>Choose Your <span class="grad-text">Path in LA</span></h2>
+          <h2>Choose Your Path in LA</h2>
           <p class="lead">Five departments, one city. Find where you belong and start your career today.</p>
         </div>
         <div class="grid grid-3">
@@ -215,7 +225,7 @@
             <div class="icon-box" style="margin:0 auto 20px"><i data-icon="file"></i></div>
             <h3>Ready to Apply?</h3>
             <p>All departments are accepting applications. Pick your path and submit yours today.</p>
-            <div><a class="btn btn-primary" href="applications.html"><span>Apply Now</span><i data-icon="arrow"></i></a></div>
+            <div><a class="btn btn-primary" href="applications.html"><span>Apply Now</span></a></div>
           </div>
         </div>
       </div>
@@ -230,13 +240,12 @@
           <span class="hud-blip" style="left:38%;top:36%"></span>
           <span class="hud-blip" style="left:62%;top:58%;background:var(--pink);box-shadow:0 0 12px var(--pink)"></span>
           <span class="hud-blip" style="left:55%;top:30%"></span>
-          <span class="hud-label" style="left:40px;top:40px">Dispatch &middot; Live</span>
-          <span class="hud-label" style="right:40px;bottom:40px">10-8 &middot; In Service</span>
+          <span class="hud-label" style="left:40px;top:40px">Dispatch live</span>
+          <span class="hud-label" style="right:40px;bottom:40px">10-8 in service</span>
           <span class="hud-label" style="left:40px;bottom:40px;color:var(--pink);border-color:rgba(222,95,185,.5)">Los Angeles</span>
         </div>
         <div class="reveal d1">
-          <div class="eyebrow" style="margin-bottom:12px">Life in the City</div>
-          <h2>Your City. <span class="grad-text">Your Story.</span></h2>
+          <h2>Your City. Your Story.</h2>
           <p class="lead">Whether you are chasing suspects down the 101 or building the most respected business on the boulevard, Project Tropics gives you the tools to tell your story.</p>
           <ul class="feature-list">
             <li><span class="fi"><i data-icon="radio"></i></span><div><strong>Realistic Dispatch &amp; Comms</strong><span>Structured radio traffic and CAD that keeps every scene organized.</span></div></li>
@@ -244,7 +253,7 @@
             <li><span class="fi"><i data-icon="gavel"></i></span><div><strong>Fair, Consistent Rules</strong><span>Clear guidelines enforced evenly so everyone can enjoy the city.</span></div></li>
           </ul>
           <div class="btn-row">
-            <a class="btn btn-primary" href="departments.html"><span>View Departments</span><i data-icon="arrow"></i></a>
+            <a class="btn btn-primary" href="departments.html"><span>View Departments</span></a>
             <a class="btn btn-pink" href="rules.html"><span>Community Rules</span></a>
           </div>
         </div>
@@ -255,8 +264,7 @@
     <section class="section" style="padding-top:20px">
       <div class="container">
         <div class="section-head reveal">
-          <div class="eyebrow">The Tropics Difference</div>
-          <h2>Why Players <span class="grad-text">Choose Us</span></h2>
+          <h2>Why Players Choose Us</h2>
         </div>
         <div class="table-wrap reveal">
           <table class="compare">
@@ -280,8 +288,7 @@
     <section class="section" style="padding-top:20px">
       <div class="container">
         <div class="section-head reveal">
-          <div class="eyebrow">Get Started</div>
-          <h2>Join in <span class="grad-text">4 Easy Steps</span></h2>
+          <h2>Join in 4 Easy Steps</h2>
         </div>
         <div class="steps">
           <div class="card step reveal">
@@ -316,8 +323,7 @@
     <section class="section" style="padding-top:20px">
       <div class="container">
         <div class="section-head reveal">
-          <div class="eyebrow">Photo Gallery</div>
-          <h2>Moments From <span class="grad-text">The City</span></h2>
+          <h2>Moments From The City</h2>
         </div>
         <div class="gallery-grid" id="gallery-grid" data-limit="4"></div>
         <div style="text-align:center;margin-top:36px">
@@ -330,12 +336,11 @@
     <section class="section" style="padding-top:20px">
       <div class="container">
         <div class="cta-band reveal">
-          <div class="eyebrow">Your Story Starts Now</div>
-          <h2>Ready to Hit the <span class="grad-text">Streets of LA?</span></h2>
+          <h2>Ready to Hit the Streets of LA?</h2>
           <p>Join a growing community of roleplayers in the most immersive LA roleplay experience on FiveM. Your badge, your business, your legacy.</p>
           <div class="btn-row">
             <a class="btn-discord lg" data-link="discord" href="#" target="_blank" rel="noopener"><i data-icon="discord"></i><span>Join Our Discord</span></a>
-            <a class="btn btn-ghost" href="applications.html"><span>Apply Now</span><i data-icon="arrow"></i></a>
+            <a class="btn btn-ghost" href="applications.html"><span>Apply Now</span></a>
           </div>
         </div>
       </div>

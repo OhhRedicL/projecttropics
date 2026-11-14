@@ -10,7 +10,7 @@
   <link rel="apple-touch-icon" href="assets/img/apple-touch-icon.png">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Orbitron:wght@600;700;800;900&family=Rajdhani:wght@500;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:ital,wght@0,700;0,800;0,900;1,800&family=Chakra+Petch:wght@400;500;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="assets/css/style.css">
 </head>
 <body data-page="gallery">
@@ -21,20 +21,20 @@
     <section class="page-hero">
       <div class="container">
         <div class="breadcrumb"><a href="index.html">Home</a> / Gallery</div>
-        <h1>Photo <span class="grad-text">Gallery</span></h1>
+        <h1>Photo Gallery</h1>
         <p>Snapshots from the streets, freeways and events of Project Tropics. Want your screenshot featured? Post it in our Discord.</p>
       </div>
     </section>
 
     <section class="section" style="padding-top:60px">
       <div class="container">
-        <div class="filter-bar reveal" role="tablist" aria-label="Filter gallery">
-          <button class="tab-btn" type="button" data-filter="all" aria-selected="true">All</button>
-          <button class="tab-btn" type="button" data-filter="patrol" aria-selected="false"><i data-icon="shield"></i>Patrol</button>
-          <button class="tab-btn" type="button" data-filter="pursuits" aria-selected="false"><i data-icon="car"></i>Pursuits</button>
-          <button class="tab-btn" type="button" data-filter="civilian" aria-selected="false"><i data-icon="users"></i>Civilian</button>
-          <button class="tab-btn" type="button" data-filter="events" aria-selected="false"><i data-icon="star"></i>Events</button>
-          <button class="tab-btn" type="button" data-filter="scenery" aria-selected="false"><i data-icon="camera"></i>Scenery</button>
+        <div class="filter-bar reveal" role="group" aria-label="Filter gallery">
+          <button class="tab-btn" type="button" data-filter="all" aria-pressed="true">All</button>
+          <button class="tab-btn" type="button" data-filter="patrol" aria-pressed="false"><i data-icon="shield"></i>Patrol</button>
+          <button class="tab-btn" type="button" data-filter="pursuits" aria-pressed="false"><i data-icon="car"></i>Pursuits</button>
+          <button class="tab-btn" type="button" data-filter="civilian" aria-pressed="false"><i data-icon="users"></i>Civilian</button>
+          <button class="tab-btn" type="button" data-filter="events" aria-pressed="false"><i data-icon="star"></i>Events</button>
+          <button class="tab-btn" type="button" data-filter="scenery" aria-pressed="false"><i data-icon="camera"></i>Scenery</button>
         </div>
         <div class="gallery-grid" id="gallery-grid"></div>
 
