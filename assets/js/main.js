@@ -81,7 +81,9 @@
       NAV.map(function (n) {
         return '<li><a href="' + n.href + '"' + (n.key === page ? ' class="active" aria-current="page"' : "") + ">" + n.label + "</a></li>";
       }).join("") +
+      '<li class="nav-status-item"><a data-link="status" href="#" target="_blank" rel="noopener"><span class="status-pip" aria-hidden="true"></span>Server Status</a></li>' +
       "</ul>" +
+      '<a class="btn-status" data-link="status" href="#" target="_blank" rel="noopener"><span class="status-pip" aria-hidden="true"></span><span>Status</span></a>' +
       discordBtn() +
       '<button class="nav-toggle" aria-label="Open menu" aria-expanded="false" aria-controls="nav-links"><span></span></button>' +
       "</nav>";
@@ -108,6 +110,7 @@
       '<li><a href="applications.html">Apply Now</a></li>' +
       '<li><a href="rules.html">Read the Rules</a></li>' +
       '<li><a href="resources.html#connect">Connect to Server</a></li>' +
+      '<li><a data-link="status" href="#" target="_blank" rel="noopener">Server Status</a></li>' +
       '<li><a href="#" data-link="discord" target="_blank" rel="noopener">Discord</a></li></ul></div>' +
       "</div>" +
       '<div class="footer-bottom"><p>&copy; ' + new Date().getFullYear() + " Project Tropics Roleplay. All rights reserved.</p>" +
@@ -123,6 +126,9 @@
     });
     root.querySelectorAll('[data-link="discord"]').forEach(function (a) {
       a.href = CFG.discordInvite || "#";
+    });
+    root.querySelectorAll('[data-link="status"]').forEach(function (a) {
+      a.href = CFG.statusPage || "#";
     });
     root.querySelectorAll('[data-link="fivem"]').forEach(function (a) {
       a.href = CFG.fivemJoinUrl || "#";
