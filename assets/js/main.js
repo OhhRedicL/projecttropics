@@ -52,15 +52,7 @@
   };
   window.PT_ICONS = ICONS;
 
-  var LOGO =
-    '<svg class="brand-mark" viewBox="0 0 48 48" aria-hidden="true">' +
-    '<defs><linearGradient id="ptg" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#FCBD3D"/><stop offset=".5" stop-color="#F6B057"/><stop offset="1" stop-color="#DE5FB9"/></linearGradient>' +
-    '<clipPath id="ptc"><path d="M24 3 42 13.5v21L24 45 6 34.5v-21z"/></clipPath></defs>' +
-    '<path d="M24 3 42 13.5v21L24 45 6 34.5v-21z" fill="#000" stroke="url(#ptg)" stroke-width="2.5"/>' +
-    '<g clip-path="url(#ptc)"><circle cx="24" cy="30" r="12" fill="url(#ptg)"/>' +
-    '<path d="M6 30h36M6 33.5h36M6 37h36" stroke="#000" stroke-width="1.8"/>' +
-    '<path d="M24 30c0-6 1-11 3-15M27 15c-3-1-6 0-8 2M27 15c3-2 6-2 8 0M27 15c-1-3-3-4-6-4M27 15c2-3 5-3 7-2" stroke="#000" stroke-width="1.6" fill="none" stroke-linecap="round"/></g>' +
-    "</svg>";
+  var LOGO = '<img class="brand-mark" src="assets/img/logo-160.png" alt="" width="56" height="56">';
 
   /* ---------------- Shared header & footer ---------------- */
   var NAV = [
@@ -101,7 +93,7 @@
     footerEl.innerHTML =
       '<div class="container">' +
       '<div class="footer-grid">' +
-      '<div><a class="brand" href="index.html">' + LOGO + '<span class="brand-text"><span>PROJECT TROPICS</span><span>ROLEPLAY</span></span></a>' +
+      '<div><a class="footer-logo" href="index.html" aria-label="Project Tropics Roleplay home"><img src="assets/img/logo-160.png" alt="Project Tropics Roleplay logo" width="140" height="140" loading="lazy"></a>' +
       '<p style="margin-top:18px">A serious, story-driven FiveM roleplay community set in Los Angeles. Built by roleplayers, for roleplayers.</p>' +
       discordBtn() + "</div>" +
       '<div><h4>Explore</h4><ul>' + NAV.map(function (n) { return '<li><a href="' + n.href + '">' + n.label + "</a></li>"; }).join("") + "</ul></div>" +
