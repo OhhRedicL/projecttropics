@@ -292,18 +292,28 @@ strong { color: var(--text); }
   transition: transform .25s;
 }
 .btn-discord svg { width: 22px; height: 22px; flex-shrink: 0; }
-/* Rotating conic ring around the button */
+/* Light chasing around the button: two bright streaks over a dim base ring */
 .btn-discord::before {
   content: "";
   position: absolute;
-  inset: calc(var(--ring) * -2);
+  inset: -5px;
   border-radius: inherit;
-  padding: var(--ring);
-  background: conic-gradient(from var(--angle, 0deg), var(--gold), var(--pink), #fff, var(--orange), var(--pink), var(--gold));
+  padding: 3.5px;
+  background:
+    conic-gradient(from var(--angle, 0deg),
+      transparent 0deg 70deg,
+      rgba(222, 95, 185, .7) 130deg,
+      #fff 172deg,
+      transparent 180deg 250deg,
+      rgba(252, 189, 61, .75) 310deg,
+      #fff 352deg,
+      transparent 360deg),
+    linear-gradient(rgba(252, 189, 61, .28), rgba(222, 95, 185, .28));
   -webkit-mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0);
   -webkit-mask-composite: xor;
   mask-composite: exclude;
-  animation: ringSpin 2.2s linear infinite;
+  filter: drop-shadow(0 0 3px rgba(255, 255, 255, .9)) drop-shadow(0 0 8px rgba(222, 95, 185, .9));
+  animation: ringSpin 1.8s linear infinite;
   z-index: -1;
 }
 /* Flashing halo */
