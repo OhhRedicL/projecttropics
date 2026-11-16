@@ -1,0 +1,24 @@
+/* Shared styles for the 1080x1920 TikTok graphics */
+:root { --orange:#F6B057; --gold:#FCBD3D; --pink:#DE5FB9; --black:#000; --green:#4dff9a; }
+* { box-sizing: border-box; margin: 0; padding: 0; }
+html, body { width: 1080px; height: 1920px; overflow: hidden; background: #000; }
+body { position: relative; font-family: "Chakra Petch", sans-serif; color: #fff; }
+.display { font-family: "Barlow Condensed", sans-serif; font-weight: 900; text-transform: uppercase; line-height: .86; }
+/* TikTok UI covers the right ~150px and bottom ~420px; keep key content in this box */
+.safe { position: absolute; left: 70px; right: 170px; top: 150px; bottom: 430px; }
+.grad { background: linear-gradient(120deg, var(--gold), var(--orange) 45%, var(--pink)); -webkit-background-clip: text; background-clip: text; color: transparent; }
+.cta {
+  display: inline-flex; align-items: center; gap: 18px;
+  padding: 26px 44px; border-radius: 999px;
+  background: linear-gradient(120deg, var(--gold), var(--orange) 45%, var(--pink));
+  color: #000; font-weight: 700; font-size: 44px; letter-spacing: .02em; text-transform: uppercase;
+  box-shadow: 0 0 0 5px rgba(0,0,0,.9), 0 0 0 9px var(--pink), 0 0 60px rgba(222,95,185,.8), 0 0 120px rgba(252,189,61,.5);
+}
+.cta svg { width: 54px; height: 54px; }
+.url { font-size: 34px; font-weight: 600; color: var(--gold); letter-spacing: .02em; }
+.pill {
+  display: inline-flex; align-items: center; gap: 14px;
+  padding: 14px 28px; border-radius: 999px; font-size: 34px; font-weight: 700;
+  color: var(--green); background: rgba(77,255,154,.1); border: 3px solid rgba(77,255,154,.7);
+}
+.dot { width: 18px; height: 18px; border-radius: 50%; background: var(--green); box-shadow: 0 0 18px var(--green); }
