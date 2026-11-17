@@ -2033,3 +2033,10 @@ code.cmd {
 /* Rosters page */
 .roster-title { font-size: 1.9rem; margin-bottom: .35em; }
 .dept-card .btn-row { margin-top: 6px; }
+
+/* Rules page: let the section menu and content shrink on phones */
+.rules-layout > * { min-width: 0; }
+@media (max-width: 900px) {
+  .rules-aside { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .rules-aside a { overflow-wrap: anywhere; font-size: .88rem; padding: 10px 10px; }
+}
