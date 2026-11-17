@@ -137,7 +137,7 @@ strong { color: var(--text); }
   display: flex;
   align-items: center;
   gap: 20px;
-  max-width: 1320px;
+  max-width: 1480px;
   margin: 0 auto;
   padding: 0 20px;
 }
@@ -1843,7 +1843,7 @@ strong { color: var(--text); }
   .nav-links a { padding: 8px 9px; font-size: .95rem; }
   .nav-links a::after { left: 9px; right: 9px; }
 }
-@media (max-width: 1080px) {
+@media (max-width: 1280px) {
   .nav-toggle { display: block; }
   .nav-links {
     position: fixed;
@@ -2008,11 +2008,11 @@ strong { color: var(--text); }
 .nav-status-item { display: none; }
 .nav-status-item a { display: flex !important; align-items: center; gap: 10px; color: #c9ffe0 !important; }
 
-@media (max-width: 1320px) {
+@media (max-width: 1600px) {
   .nav { gap: 14px; }
   .brand-text { display: none; }
 }
-@media (max-width: 1080px) {
+@media (max-width: 1280px) {
   .btn-status { display: none; }
   .nav-status-item { display: block; margin-top: 8px; border-top: 1px solid var(--line); padding-top: 8px; }
 }
@@ -2029,3 +2029,7 @@ code.cmd {
   font-size: .92em;
   white-space: nowrap;
 }
+
+/* Rosters page */
+.roster-title { font-size: 1.9rem; margin-bottom: .35em; }
+.dept-card .btn-row { margin-top: 6px; }

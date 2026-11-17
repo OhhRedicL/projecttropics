@@ -59,6 +59,7 @@
     { href: "index.html", label: "Home", key: "home" },
     { href: "departments.html", label: "Departments", key: "departments" },
     { href: "applications.html", label: "Applications", key: "applications" },
+    { href: "rosters.html", label: "Rosters", key: "rosters" },
     { href: "rules.html", label: "Rules", key: "rules" },
     { href: "resources.html", label: "Resources", key: "resources" },
     { href: "gallery.html", label: "Gallery", key: "gallery" }
@@ -126,6 +127,11 @@
     });
     root.querySelectorAll('[data-link="discord"]').forEach(function (a) {
       a.href = CFG.discordInvite || "#";
+    });
+    root.querySelectorAll("[data-roster]").forEach(function (a) {
+      var url = CFG.rosters && CFG.rosters[a.getAttribute("data-roster")];
+      if (url) { a.href = url; a.target = "_blank"; a.rel = "noopener"; }
+      else { a.setAttribute("aria-disabled", "true"); }
     });
     root.querySelectorAll('[data-link="status"]').forEach(function (a) {
       a.href = CFG.statusPage || "#";

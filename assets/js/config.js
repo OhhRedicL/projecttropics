@@ -30,6 +30,14 @@ window.PT_CONFIG = {
     staff: "#"
   },
 
+  // Department rosters (Rosters page and "View roster" buttons)
+  rosters: {
+    lapd: "https://fiveroster.com/r/ptrplspd",
+    lasd: "https://fiveroster.com/r/ptrpbcso",
+    chp: "https://fiveroster.com/r/ptrpsast",
+    comms: "https://fiveroster.com/r/ptrpsac"
+  },
+
   // Set to false to show an application as CLOSED
   applicationsOpen: {
     lapd: true,
