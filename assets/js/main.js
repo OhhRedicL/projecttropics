@@ -133,6 +133,9 @@
       if (url) { a.href = url; a.target = "_blank"; a.rel = "noopener"; }
       else { a.setAttribute("aria-disabled", "true"); }
     });
+    root.querySelectorAll('[data-link="cad"]').forEach(function (a) {
+      a.href = CFG.cad || "#";
+    });
     root.querySelectorAll('[data-link="status"]').forEach(function (a) {
       a.href = CFG.statusPage || "#";
     });

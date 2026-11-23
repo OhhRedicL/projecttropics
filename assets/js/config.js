@@ -19,6 +19,9 @@ window.PT_CONFIG = {
   // Server status page (Status button in the top menu bar)
   statusPage: "https://projecttropicsrp.fivestatus.com/",
 
+  // CAD (Open CAD button on the Resources page)
+  cad: "https://cad.projecttropicsrp.com",
+
   // Application form links (Google Forms, Discord threads, etc.)
   applications: {
     lapd: "https://guildbase.gg/apply/project-tropics-roleplay/los-santos-police-department",
